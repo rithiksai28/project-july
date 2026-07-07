@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Geist:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface-container-high: #e6e8ea;
+  --color-primary-container: #0066ff;
+  --color-on-primary: #ffffff;
+  --color-tertiary-fixed: #e9ddff;
+  --color-inverse-primary: #b3c5ff;
+  --color-on-tertiary-fixed-variant: #5700c9;
+  --color-on-surface: #191c1e;
+  --color-on-secondary: #ffffff;
+  --color-background: #f7f9fb;
+  --color-error-container: #ffdad6;
+  --color-secondary-fixed-dim: #00dbe7;
+  --color-surface-variant: #e0e3e5;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container-highest: #e0e3e5;
+  --color-outline-variant: #c2c6d8;
+  --color-secondary-fixed: #74f5ff;
+  --color-error: #ba1a1a;
+  --color-on-tertiary-fixed: #23005b;
+  --color-primary-fixed: #dae1ff;
+  --color-inverse-on-surface: #eff1f3;
+  --color-on-secondary-fixed-variant: #004f54;
+  --color-on-background: #191c1e;
+  --color-surface-dim: #d8dadc;
+  --color-tertiary-container: #8447ff;
+  --color-on-primary-container: #f8f7ff;
+  --color-surface-tint: #0054d6;
+  --color-secondary: #00696f;
+  --color-inverse-surface: #2d3133;
+  --color-on-primary-fixed-variant: #003fa4;
+  --color-on-secondary-fixed: #002022;
+  --color-on-error-container: #93000a;
+  --color-surface-container: #eceef0;
+  --color-tertiary: #6d00f8;
+  --color-on-error: #ffffff;
+  --color-primary-fixed-dim: #b3c5ff;
+  --color-on-secondary-container: #006a70;
+  --color-on-tertiary-container: #fcf5ff;
+  --color-on-primary-fixed: #001849;
+  --color-primary: #0050cb;
+  --color-surface-bright: #f7f9fb;
+  --color-secondary-container: #00f1fe;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-fixed-dim: #d1bcff;
+  --color-outline: #727687;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-surface-variant: #424656;
+  --color-surface: #f7f9fb;
+
+  --spacing-gutter: 24px;
+  --spacing-container-padding: 32px;
+  --spacing-base: 8px;
+  --spacing-card-gap: 20px;
+  --spacing-sidebar-width: 280px;
+
+  --font-headline-md: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-display-lg-mobile: "Inter", sans-serif;
+  --font-display-lg: "Inter", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-label-sm: "Geist", monospace;
+}
+
+/* Custom Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fb;
+  overflow-x: hidden;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 105, 203, 0.05);
+}
+
+.glow-pulse {
+  animation: pulse-glow 2s infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from { box-shadow: 0 0 5px rgba(0, 219, 231, 0.4), 0 0 10px rgba(0, 219, 231, 0.2); }
+  to { box-shadow: 0 0 20px rgba(0, 219, 231, 0.8), 0 0 30px rgba(0, 219, 231, 0.4); }
+}
+
+.sidebar-active-indicator {
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #00dbe7;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 10px #00dbe7;
+}
+
+.data-flow-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(0, 219, 231, 0.4), transparent);
+  height: 1px;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.risk-safe { background: rgba(34, 197, 94, 0.1); color: #166534; border: 1px solid rgba(34, 197, 94, 0.2); }
+.risk-warning { background: rgba(234, 179, 8, 0.1); color: #854d0e; border: 1px solid rgba(234, 179, 8, 0.2); }
+.risk-critical { background: rgba(239, 68, 68, 0.1); color: #991b1b; border: 1px solid rgba(239, 68, 68, 0.2); }
+
+.custom-scroll::-webkit-scrollbar { width: 6px; }
+.custom-scroll::-webkit-scrollbar-track { background: transparent; }
+.custom-scroll::-webkit-scrollbar-thumb { background: rgba(0, 80, 203, 0.1); border-radius: 10px; }
+
+.upload-dashed {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='12' ry='12' stroke='%230066FF' stroke-width='2' stroke-dasharray='12%2c 12' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 12px;
+}
