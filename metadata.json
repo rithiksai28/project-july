@@ -1,5 +1,5 @@
 {
-  "name": "Shankar AI",
+  "name": "EduPulse AI",
   "description": "Predictive attendance intelligence dashboard for educational analytics, tracking risk distribution, engagement, and student attendance patterns.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
